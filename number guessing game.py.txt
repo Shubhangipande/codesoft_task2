@@ -1,0 +1,30 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+int main() {
+    // Initialize random seed
+    std::srand(std::time(0));
+    
+    // Generate a random number between 1 and 100
+    int target = std::rand() % 100 + 1;
+    int guess = 0;
+    
+    std::cout << "Guess the number between 1 and 100:" << std::endl;
+    
+    // Loop until the user guesses the correct number
+    while (guess != target) {
+        std::cout << "Enter your guess: ";
+        std::cin >> guess;
+        
+        if (guess > target) {
+            std::cout << "Too high!" << std::endl;
+        } else if (guess < target) {
+            std::cout << "Too low!" << std::endl;
+        } else {
+            std::cout << "Congratulations! You've guessed the correct number!" << std::endl;
+        }
+    }
+    
+    return 0;
+}
